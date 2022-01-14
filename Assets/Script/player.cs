@@ -13,7 +13,7 @@ public class player : MonoBehaviour
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
     private float turretAmount;
-    public float health = 5;
+    public float health = 100;
     private GameObject currentTurret;
     public Sprite turret1Sprite;
     public Sprite turret2Sprite;
@@ -40,11 +40,6 @@ public class player : MonoBehaviour
             scrapAmount -= 25;
             turretAmount += 1;
         }
-        if (health <= 0)
-        {
-            GameObject.Destroy(gameObject);
-            Time.timeScale = 0;
-        }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -61,6 +56,14 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("projectile"))
+        {
+            Tdmg();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -80,6 +83,15 @@ public class player : MonoBehaviour
         if (currentTurret == turret2)
         {
             turretSelect.sprite = turret2Sprite;
+        }
+    }
+
+    private void Tdmg()
+    {
+        health -= 25;
+        if (health < 0)
+        {
+            rb.bodyType = RigidbodyType2D.Static;
         }
     }
 }
