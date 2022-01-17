@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     public GameObject turret2;
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
+    HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
     private GameObject currentTurret;
@@ -23,6 +24,7 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
+        hpAmount = FindObjectOfType<HpUI>();
         currentTurret = turret1;
         changeimg();
 
@@ -33,6 +35,7 @@ public class player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         scrapAmountShow.playerScrap = scrapAmount;
+        hpAmount.hpAmount = health;
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
         {
