@@ -41,6 +41,7 @@ public class player : MonoBehaviour
             turretAmount += 1;
         }
 
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentTurret = turret1;
