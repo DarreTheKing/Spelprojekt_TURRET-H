@@ -460,9 +460,9 @@ GameObject:
   m_Component:
   - component: {fileID: 358311899}
   - component: {fileID: 358311898}
-  - component: {fileID: 358311897}
   - component: {fileID: 358311896}
   - component: {fileID: 358311895}
+  - component: {fileID: 358311897}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -529,7 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc34ddab5cfddab4b9f90c9b283d4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0
+  animator: {fileID: 0}
   turret1: {fileID: 0}
   turret2: {fileID: 0}
   scrapAmount: 0
