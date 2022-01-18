@@ -2416,3 +2416,4 @@ Received Import Request.
 Start importing Assets/Sprites/Player/Player.prefab using Guid(8804e27dde0d4fe4e8967e8f3bd144bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678d3c8460500e400b4048efb5661f2a') in 0.101018 seconds 
   Import took 0.106487 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
