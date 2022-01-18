@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5601174964509161998}
   - component: {fileID: 6917344312551971144}
-  - component: {fileID: 2329935049692731152}
+  - component: {fileID: 3673953041443059328}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
---- !u!114 &2329935049692731152
+--- !u!114 &3673953041443059328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,9 +67,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2906121151710665573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc9580b836ea4444af8c89fa675131d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fb766aee2e720148b89bdced343d7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraDirection: 4
 --- !u!1 &3000267211804903496
 GameObject:
   m_ObjectHideFlags: 0
