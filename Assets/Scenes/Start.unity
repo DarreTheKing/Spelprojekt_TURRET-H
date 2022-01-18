@@ -1175,10 +1175,10 @@ MonoBehaviour:
   - {fileID: 8000240820425081306, guid: 6405cc949b9ad474583be1bd943fde73, type: 3}
   rightRooms:
   - {fileID: 3485685257290066339, guid: cc432f6fb6eca6e44a37ef578b7e7253, type: 3}
-  closedRoom: {fileID: 0}
+  closedRoom: {fileID: 3551582844006289102, guid: c9d4d411f1b4933418769980fe1d7520, type: 3}
   rooms: []
-  waitTime: 0
-  win: {fileID: 0}
+  waitTime: 2
+  win: {fileID: 6752654077127661754, guid: e77d4eb5aaaa8dd4c90dfab472f44b40, type: 3}
 --- !u!4 &1560616454
 Transform:
   m_ObjectHideFlags: 0
