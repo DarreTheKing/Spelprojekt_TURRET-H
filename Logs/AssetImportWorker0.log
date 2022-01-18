@@ -527,3 +527,11 @@ Received Import Request.
 Start importing Assets/Prefabs/Part to rotate.prefab using Guid(27db49ef00d54244f84cff02b6c71ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47f64a40807fceb0e794971b73969323') in 0.053228 seconds 
   Import took 0.063811 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 248.775122 seconds.
+  path: Assets/Turrets/Turret.prefab
+  artifactKey: Guid(e6dbf1dddb248144dae04d0886673e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Turrets/Turret.prefab using Guid(e6dbf1dddb248144dae04d0886673e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9180acb656903b91a1f9874ab06af379') in 0.116711 seconds 
+  Import took 0.130394 seconds .
+
