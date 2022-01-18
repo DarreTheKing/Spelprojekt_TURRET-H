@@ -17,5 +17,8 @@ public class Scene_Changer : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex); //detta laddar scenen man förts till - Darian
     }
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
