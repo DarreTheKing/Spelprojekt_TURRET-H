@@ -458,6 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDirection: 1
+  camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
 --- !u!1 &2983996404618238001
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDirection: 4
+  camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
 --- !u!1 &4037004858225122499
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDirection: 3
+  camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
 --- !u!1 &4339952157777745569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDirection: 2
+  camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
 --- !u!1 &8796969182857157804
 GameObject:
   m_ObjectHideFlags: 0

@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraDirection: 1
+  camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
 --- !u!1 &5328881208729716139
 GameObject:
   m_ObjectHideFlags: 0
