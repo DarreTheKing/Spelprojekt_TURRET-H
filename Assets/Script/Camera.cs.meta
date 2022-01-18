@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - camera: {fileID: 4198614596898526243, guid: 9bb674f7d2ded6e499b7e833224fce75, type: 3}
+  - camera: {fileID: 5485885685770837740, guid: 1d211f9df23b65142b7042fa61bd4491, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
