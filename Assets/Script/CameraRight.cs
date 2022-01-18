@@ -24,7 +24,7 @@ public class CameraRight : MonoBehaviour
     {
         if (other.transform.tag == ("Player"))
         {
-            Instantiate(camera, transform.position + new Vector3(4.5f, 0, -10), Quaternion.identity);
+            Instantiate(camera, transform.position + new Vector3(18, 0, -10), Quaternion.identity);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

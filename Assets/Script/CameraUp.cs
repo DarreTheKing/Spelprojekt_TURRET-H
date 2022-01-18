@@ -21,7 +21,7 @@ public class CameraUp : MonoBehaviour
     {
         if(other.transform.tag == ("Player"))
         {
-            Instantiate(camera, transform.position + new Vector3(0, 4.5f, -10), Quaternion.identity);
+            Instantiate(camera, transform.position + new Vector3(0, 10, -10), Quaternion.identity);
         }
 
     }
