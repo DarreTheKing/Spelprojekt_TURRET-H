@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     public float speed;
+
+    public Animator animator;
+
     private Rigidbody2D rb;
     Vector2 movement;
     public GameObject turret1;
@@ -34,8 +37,13 @@ public class player : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        scrapAmountShow.playerScrap = scrapAmount;
-        hpAmount.hpAmount = health;
+       // scrapAmountShow.playerScrap = scrapAmount;
+       // hpAmount.hpAmount = health;
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
         {
