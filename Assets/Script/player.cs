@@ -48,6 +48,11 @@ public class player : MonoBehaviour
             turretAmount += 1;
         }
 
+        if (health > 101)
+        {
+            health = 100;
+        }
+
     }
     private void FixedUpdate()
     {
@@ -65,9 +70,14 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "scrap")
+        if (collision.transform.CompareTag("scrap"))
         {
             scrapAmount += 15;
+            Destroy(collision.gameObject);
+        }
+        if (collision.transform.CompareTag("Health"))
+        {
+            health += 20;
             Destroy(collision.gameObject);
         }
     }
@@ -79,7 +89,17 @@ public class player : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             animator.SetBool("Dead", true);
+            StartCoroutine(Death());
+            
         }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        yield return new WaitForSeconds(0.2f);
+        Time.timeScale = 0;
     }
 }
 

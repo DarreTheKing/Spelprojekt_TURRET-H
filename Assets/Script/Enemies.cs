@@ -15,14 +15,15 @@ public class Enemies : MonoBehaviour
     private float bulletForce = 20;
     public Animator animator;
     public float stopRange;
-    // Start is called before the first frame update
+    public float health=100;
+    public GameObject[] drops;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         prb = projectile.GetComponent<Rigidbody2D>();
         animator.SetBool("Walking", false);
-
         
     }
 
@@ -41,6 +42,21 @@ public class Enemies : MonoBehaviour
         }
         
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Damage();
+        }
+        
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Bullet"))
+        {
+            Damage();
+            
+        }
     }
 
     private void Move()
@@ -51,6 +67,16 @@ public class Enemies : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
+    private void Damage()
+    {
+        health -= 50;
+        if (health <= 0)
+        {
+            Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        
+    }
 
 
     private void Shoot()
@@ -59,7 +85,7 @@ public class Enemies : MonoBehaviour
         timeBetweenAttack += Time.deltaTime;
         if (timeBetweenAttack >= attackRate)
         {
-            GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
             timeBetweenAttack = 0;
         }
         
