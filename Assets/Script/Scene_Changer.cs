@@ -17,6 +17,10 @@ public class Scene_Changer : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex); //detta laddar scenen man förts till - Darian
     }
+    public void Replay()
+    {
+        SceneManager.LoadScene("Start");
+    }
     public void MainMenu()
     {
         SceneManager.LoadScene("Main_menu_Scene");

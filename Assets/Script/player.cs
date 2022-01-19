@@ -17,9 +17,11 @@ public class player : MonoBehaviour
     HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
+    public AudioSource placeTurret;
     // Start is called before the first frame update
     void Start()
     {
+        placeTurret = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
         hpAmount = FindObjectOfType<HpUI>();
@@ -40,6 +42,7 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
         {
+            placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
