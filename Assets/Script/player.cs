@@ -12,24 +12,17 @@ public class player : MonoBehaviour
     private Rigidbody2D rb;
     Vector2 movement;
     public GameObject turret1;
-    public GameObject turret2;
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
     HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
-    private GameObject currentTurret;
-    public Sprite turret1Sprite;
-    public Sprite turret2Sprite;
-    public Image turretSelect;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
         hpAmount = FindObjectOfType<HpUI>();
-        currentTurret = turret1;
-        changeimg();
 
     }
     // Update is called once per frame
@@ -47,23 +40,11 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
         {
-            Instantiate(currentTurret, rb.position, Quaternion.identity);
+            Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentTurret = turret1;
-            changeimg();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentTurret = turret2;
-            changeimg();
-
-        }
     }
     private void FixedUpdate()
     {
@@ -86,17 +67,6 @@ public class player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    private void changeimg()
-    {
-        if (currentTurret == turret1)
-        {
-            turretSelect.sprite = turret1Sprite;
-        }
-        if (currentTurret == turret2)
-        {
-            turretSelect.sprite = turret2Sprite;
-        }
-    }
 
     private void Tdmg()
     {
@@ -104,6 +74,7 @@ public class player : MonoBehaviour
         if (health < 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
+            animator.SetBool("Dead", true);
         }
     }
 }
