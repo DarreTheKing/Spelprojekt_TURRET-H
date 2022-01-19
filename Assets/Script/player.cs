@@ -59,6 +59,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("projectile"))
         {
             Tdmg();
+            Destroy(collision.gameObject);
         }
     }
 
