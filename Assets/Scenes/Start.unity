@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19000221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 500, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 328317741}
@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 358311896}
   - component: {fileID: 358311895}
   - component: {fileID: 358311897}
+  - component: {fileID: 358311900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -515,6 +516,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &358311900
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358311894}
+  m_Enabled: 1
 --- !u!1 &382072887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,15 +1179,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomRooms:
   - {fileID: 1900084135507407125, guid: cb392e147457b4f4fa2c1acf01c4c367, type: 3}
+  - {fileID: 5957659332428609399, guid: 588ccdb9da9c1e94f808eb899f4e9e32, type: 3}
   topRooms:
   - {fileID: 7941682913099081793, guid: 60f409ce4d0ac5949adb3976ec2518e3, type: 3}
+  - {fileID: 5957659332428609399, guid: 588ccdb9da9c1e94f808eb899f4e9e32, type: 3}
   leftRooms:
   - {fileID: 8000240820425081306, guid: 6405cc949b9ad474583be1bd943fde73, type: 3}
+  - {fileID: 1491570908765830631, guid: 9fb2bae252010ae4fb154ba38bb69a89, type: 3}
   rightRooms:
   - {fileID: 3485685257290066339, guid: cc432f6fb6eca6e44a37ef578b7e7253, type: 3}
+  - {fileID: 1491570908765830631, guid: 9fb2bae252010ae4fb154ba38bb69a89, type: 3}
   closedRoom: {fileID: 3551582844006289102, guid: c9d4d411f1b4933418769980fe1d7520, type: 3}
   rooms: []
-  waitTime: 2
+  waitTime: 4
   win: {fileID: 8009905600559756329, guid: e77d4eb5aaaa8dd4c90dfab472f44b40, type: 3}
 --- !u!4 &1560616454
 Transform:
@@ -1546,5 +1559,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5485885685770837741, guid: 1d211f9df23b65142b7042fa61bd4491, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d211f9df23b65142b7042fa61bd4491, type: 3}
