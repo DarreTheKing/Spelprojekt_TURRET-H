@@ -156,7 +156,7 @@ Transform:
   - {fileID: 936398467}
   - {fileID: 1663306452}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21802480
 GameObject:
@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 358311895}
   - component: {fileID: 358311897}
   - component: {fileID: 358311900}
+  - component: {fileID: 358311901}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -443,14 +444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  animator: {fileID: 0}
-  turret1: {fileID: 0}
-  turret2: {fileID: 0}
-  scrapAmount: 0
+  animator: {fileID: 358311901}
+  turret1: {fileID: 6206592497604851530, guid: e6dbf1dddb248144dae04d0886673e97, type: 3}
+  scrapAmount: 100
   health: 100
-  turret1Sprite: {fileID: 0}
-  turret2Sprite: {fileID: 0}
-  turretSelect: {fileID: 0}
 --- !u!212 &358311898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -524,6 +521,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358311894}
   m_Enabled: 1
+--- !u!95 &358311901
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358311894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d52d390b0bc0c84f869a6f675c41a15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &382072887
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2370433431872991932, guid: 0c8ba52a28a082b4b9a100156aa93ba6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2370433431872991932, guid: 0c8ba52a28a082b4b9a100156aa93ba6, type: 3}
       propertyPath: m_LocalPosition.x
