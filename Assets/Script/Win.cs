@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class Win : MonoBehaviour
 {
     public Image winImage;
+    public Image replayImage;
+    public Image menuImage;
+    public Button replayButton;
+    public Button menuButton;
+    public Text menuText;
+    public Text replayText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,12 @@ public class Win : MonoBehaviour
         if(other.gameObject.tag == ("Player"))
         {
             winImage.enabled = true;
+            replayButton.enabled = true;
+            replayImage.enabled = true;
+            replayText.enabled = true;
+            menuImage.enabled = true;
+            menuButton.enabled = true;
+            menuText.enabled = true;
         }
     }
 
