@@ -11,5 +11,9 @@ public class Destroy : MonoBehaviour
         {
 			Destroy(other.gameObject);
         }
+		if (other.transform.tag == ("Wall"))
+        {
+			Destroy(other.gameObject);
+        }
 	}
 }
