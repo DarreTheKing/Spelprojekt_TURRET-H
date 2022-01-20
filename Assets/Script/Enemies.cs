@@ -17,9 +17,17 @@ public class Enemies : MonoBehaviour
     public float stopRange;
     public float health=100;
     public GameObject[] drops;
+    public AudioSource enemySound1;
+    public AudioSource enemySound2;
+    AudioSource randomSound;
+    public List<AudioSource> audioList;
+    private float timer;
 
     void Start()
     {
+        timer = Random.Range(5, 10);
+        audioList.Add(enemySound1);
+        audioList.Add(enemySound2);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         prb = projectile.GetComponent<Rigidbody2D>();
@@ -30,6 +38,14 @@ public class Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int audioIndex = Random.Range(0, 2);
+        randomSound = audioList[audioIndex];
+
+        if(timer <= 0)
+        {
+            randomSound.Play();
+            timer = Random.Range(5, 10);
+        }
         timeBetweenAttack += Time.deltaTime;
 
         if (Vector3.Distance(target.position, transform.position) > stopRange)
