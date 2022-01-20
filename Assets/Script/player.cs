@@ -53,6 +53,11 @@ public class player : MonoBehaviour
             health = 100;
         }
 
+        if (scrapAmount < 25)
+        {
+            scrapAmount += Time.deltaTime;
+        }
+
     }
     private void FixedUpdate()
     {
