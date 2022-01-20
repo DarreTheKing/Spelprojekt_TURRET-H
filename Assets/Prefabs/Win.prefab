@@ -172,9 +172,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2845108982944622127}
+      - m_Target: {fileID: 4913766039890112828}
         m_TargetAssemblyTypeName: Scene_Changer, Assembly-CSharp
-        m_MethodName: MainMenu
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -452,10 +452,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2845108982944622127}
+      - m_Target: {fileID: 4913766039890112828}
         m_TargetAssemblyTypeName: Scene_Changer, Assembly-CSharp
-        m_MethodName: RestartLevel
-        m_Mode: 3
+        m_MethodName: Replay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -473,7 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2613904575368006147}
-  - component: {fileID: 2845108982944622127}
+  - component: {fileID: 4913766039890112828}
   m_Layer: 0
   m_Name: WinButtons
   m_TagString: Untagged
@@ -496,7 +496,7 @@ Transform:
   m_Father: {fileID: 1121289840410556418}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2845108982944622127
+--- !u!114 &4913766039890112828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3298177490150008607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b57b645fddece4a8f91bdefbebd247, type: 3}
+  m_Script: {fileID: 11500000, guid: de6e535c337be6d40a7945795037ab34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
