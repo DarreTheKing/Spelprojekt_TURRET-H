@@ -17,9 +17,11 @@ public class player : MonoBehaviour
     HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
+    AudioSource placeTurret;
     // Start is called before the first frame update
     void Start()
     {
+        placeTurret = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
         hpAmount = FindObjectOfType<HpUI>();
@@ -40,9 +42,15 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
         {
+            placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
+        }
+
+        if (health > 101)
+        {
+            health = 100;
         }
 
     }
@@ -56,14 +64,20 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("projectile"))
         {
             Tdmg();
+            Destroy(collision.gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "scrap")
+        if (collision.transform.CompareTag("scrap"))
         {
             scrapAmount += 15;
+            Destroy(collision.gameObject);
+        }
+        if (collision.transform.CompareTag("Health"))
+        {
+            health += 20;
             Destroy(collision.gameObject);
         }
     }
@@ -75,7 +89,17 @@ public class player : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             animator.SetBool("Dead", true);
+            StartCoroutine(Death());
+            
         }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        yield return new WaitForSeconds(0.2f);
+        Time.timeScale = 0;
     }
 }
 
