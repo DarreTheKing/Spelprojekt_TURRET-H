@@ -10,11 +10,11 @@ public class Win : MonoBehaviour
     public Image menuImage;
     public Button replayButton;
     public Button menuButton;
-    public Text menuText;
-    public Text replayText;
+    player player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<player>();
     }
 
     // Update is called once per frame
@@ -29,10 +29,9 @@ public class Win : MonoBehaviour
             winImage.enabled = true;
             replayButton.enabled = true;
             replayImage.enabled = true;
-            replayText.enabled = true;
             menuImage.enabled = true;
             menuButton.enabled = true;
-            menuText.enabled = true;
+            player.speed = 0;
         }
     }
 
