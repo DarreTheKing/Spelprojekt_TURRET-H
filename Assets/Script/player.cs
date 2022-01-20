@@ -17,7 +17,7 @@ public class player : MonoBehaviour
     HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
-    public AudioSource placeTurret;
+    AudioSource placeTurret;
     // Start is called before the first frame update
     void Start()
     {
