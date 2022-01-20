@@ -3029,3 +3029,99 @@ Received Import Request.
 Start importing Assets/Sprites/Turret_hell_quit-1.png.png using Guid(d089a6ec64b3e8944a91cf1a0a771a4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee13fb3f310c278ddae38508277668d6') in 0.189061 seconds 
   Import took 0.202611 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008761 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.22 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.490 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3491ms)
+		BeginReloadAssembly (292ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (19ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (90ms)
+		EndReloadAssembly (2972ms)
+			LoadAssemblies (266ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (984ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (181ms)
+			SetupLoadedEditorAssemblies (1086ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (282ms)
+				ProcessInitializeOnLoadAttributes (751ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (37ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.23 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2103 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.2 MB.
+System memory in use after: 98.5 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2762.
+Total: 10.624200 ms (FindLiveObjects: 0.603400 ms CreateObjectMapping: 0.191500 ms MarkObjects: 9.550300 ms  DeleteObjects: 0.275000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 158.180282 seconds.
+  path: Assets/NewAudioMixer.mixer
+  artifactKey: Guid(60440fced4853e340881f2000a8d09f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NewAudioMixer.mixer using Guid(60440fced4853e340881f2000a8d09f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeeac1a34f8a520782bb2ee7ae9f0c24') in 0.063162 seconds 
+  Import took 0.073888 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000794 seconds.
+  path: Assets/bensound-epic.mp3
+  artifactKey: Guid(9c53478ea9e75bd4196846651338ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/bensound-epic.mp3 using Guid(9c53478ea9e75bd4196846651338ed68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c6ac19634c10aa8c0846e3efb97cd1') in 0.126660 seconds 
+  Import took 0.137391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.881407 seconds.
+  path: Assets/Audio/enemy_sound01.mp3
+  artifactKey: Guid(cc994fdbbcfc6dd499c05073b86df681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/enemy_sound01.mp3 using Guid(cc994fdbbcfc6dd499c05073b86df681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a26b3a39463b91d3de33a4472322ce1') in 0.050296 seconds 
+  Import took 0.062823 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000777 seconds.
+  path: Assets/Audio/enemy_sound02.mp3
+  artifactKey: Guid(d17d00ef5d109c94fabb5868f7774f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/enemy_sound02.mp3 using Guid(d17d00ef5d109c94fabb5868f7774f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6fc5984a8c5e02e606cab87d10f4b66') in 0.048405 seconds 
+  Import took 0.060198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004640 seconds.
+  path: Assets/Audio/enemy_sound02.mp3
+  artifactKey: Guid(d17d00ef5d109c94fabb5868f7774f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/enemy_sound02.mp3 using Guid(d17d00ef5d109c94fabb5868f7774f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6fc5984a8c5e02e606cab87d10f4b66') in 0.026355 seconds 
+  Import took 0.036912 seconds .
+
