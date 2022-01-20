@@ -84,7 +84,10 @@ public class Turret : MonoBehaviour
     {
         //This line of code makes it so if the turret has no target it wont do anything
         if (target == null)
+        {
             return;
+        }
+       
 
         //This line of code makes a direction that will point towards an enemy
         Vector3 dir = target.position - transform.position;
@@ -125,6 +128,8 @@ public class Turret : MonoBehaviour
         Projectile projectile = bulletGO.GetComponent<Projectile>();
         //This line of code will make the bullet seek a target if said bullet has a component.
         if (projectile != null)
+        {
             projectile.Seek(target);
+        }
     }
 }

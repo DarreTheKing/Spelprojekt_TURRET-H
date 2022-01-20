@@ -703,7 +703,7 @@ MonoBehaviour:
   replayText: {fileID: 3182219194439590232}
   speed: 7
   animator: {fileID: 7179525719081823579}
-  turret1: {fileID: 0}
+  turret1: {fileID: 6206592497604851530, guid: e6dbf1dddb248144dae04d0886673e97, type: 3}
   scrapAmount: 0
   health: 100
 --- !u!50 &7179525719081823583
