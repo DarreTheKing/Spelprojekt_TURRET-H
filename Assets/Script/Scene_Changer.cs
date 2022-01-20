@@ -20,7 +20,18 @@ public class Scene_Changer : MonoBehaviour
     {
         SceneManager.LoadScene("Main_menu_Scene");
     }
-
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void RestartLevel(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex); //detta laddar scenen man förts till.
