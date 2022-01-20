@@ -66,9 +66,9 @@ public class Enemies : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.transform.CompareTag("Bullet"))
+        if (other.transform.tag == ("Bullet"))
         {
             Damage();
             
