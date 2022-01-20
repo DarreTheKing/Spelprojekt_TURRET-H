@@ -33,8 +33,8 @@ public class Enemies : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
             Spawner.enemyAmmount -= 1;
+            Destroy(this.gameObject);
         }
         timeBetweenAttack += Time.deltaTime;
 
