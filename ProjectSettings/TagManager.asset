@@ -12,6 +12,7 @@ TagManager:
   - projectile
   - Health
   - scrap
+  - Bullet
   layers:
   - Default
   - TransparentFX
