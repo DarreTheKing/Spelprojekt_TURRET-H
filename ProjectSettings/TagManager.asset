@@ -8,6 +8,9 @@ TagManager:
   - Door
   - SpawnPoint
   - Rooms
+  - Enemy
+  - Bullet
+  - projectile
   layers:
   - Default
   - TransparentFX
