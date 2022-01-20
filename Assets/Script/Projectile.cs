@@ -40,11 +40,11 @@ public class Projectile : MonoBehaviour
         float distanceThisFrame = speed * Time.deltaTime;
         /*This statement checks if the length of the direction vector is less than or equal
           to the distance of the frame. And if it is, it will execute the logic within it*/
-        if (dir.magnitude <= distanceThisFrame)
-        {
-            HitTarget();
-            return;
-        }
+        //if (dir.magnitude <= distanceThisFrame)
+        //{
+           // HitTarget();
+          //  return;
+        //}
         //This line of code makes the projectile move
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
@@ -57,5 +57,15 @@ public class Projectile : MonoBehaviour
         Destroy(effectIns, 2f);
         //This line of code will destroy the bullet
         Destroy(gameObject);
+
+    }
+    //This code just turns on collision detection
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            HitTarget();
+            //return;
+        }
     }
 }
