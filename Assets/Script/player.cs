@@ -46,7 +46,6 @@ public class player : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
         {
@@ -83,12 +82,12 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("scrap"))
+        if (collision.transform.tag == ("scrap"))
         {
             scrapAmount += 15;
             Destroy(collision.gameObject);
         }
-        if (collision.transform.CompareTag("Health"))
+        if (collision.transform.tag == ("Health"))
         {
             health += 20;
             Destroy(collision.gameObject);

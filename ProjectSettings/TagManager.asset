@@ -9,9 +9,8 @@ TagManager:
   - SpawnPoint
   - Rooms
   - Enemy
+  - Bullet
   - projectile
-  - Health
-  - scrap
   layers:
   - Default
   - TransparentFX
@@ -48,10 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Body
-    uniqueID: 597322931
-    locked: 0
-  - name: Head
-    uniqueID: 2166893987
     locked: 0

@@ -9,24 +9,27 @@ public class TutorialDialogue : MonoBehaviour
     private float textamount = 0;
     private void Start()
     {
-        texto.text = ("Hello scavanger, we don't have much time");
+        
+        StartCoroutine(Dialogue());
     }
 
-    private void Update()
+    IEnumerator Dialogue()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textamount == 0)
-        {
-            texto.text = ("Quickly pick up those scrap gears");
-            textamount = 1;
-            if (Input.GetKeyDown(KeyCode.Mouse0) && textamount == 1)
-            {
-                texto.text = ("you can place turrets with scrap");
-                textamount = 2;
-                if (Input.GetKeyDown(KeyCode.Mouse0) && textamount == 2)
-                {
-                    texto.text = ("you can place them by pressing the space key but");
-                }
-            }
-        }
+        texto.text = ("Hello scavanger, we don't have much time");
+        yield return new WaitForSeconds(3f);
+        texto.text = ("Quickly pick up those scrap gears");
+        yield return new WaitForSeconds(3f);
+        texto.text = ("you can place turrets with scrap");
+        yield return new WaitForSeconds(3f);
+        texto.text = ("you can place them by pressing the space key but...");
+        yield return new WaitForSeconds(3f);
+        texto.text = ("You should wait with placing your turrets due to the monsters outside");
     }
+    
+       
+            
+                
+            
+        
+    
 }
