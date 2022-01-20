@@ -444,6 +444,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc34ddab5cfddab4b9f90c9b283d4933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseImage: {fileID: 0}
+  replayImage: {fileID: 0}
+  menuImage: {fileID: 0}
+  replayButton: {fileID: 0}
+  menuButton: {fileID: 0}
+  menuText: {fileID: 0}
+  replayText: {fileID: 0}
   speed: 7
   animator: {fileID: 358311901}
   turret1: {fileID: 6206592497604851530, guid: e6dbf1dddb248144dae04d0886673e97, type: 3}
@@ -1353,7 +1360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomRooms:
   - {fileID: 1900084135507407125, guid: cb392e147457b4f4fa2c1acf01c4c367, type: 3}
-  - {fileID: 5957659332428609399, guid: 588ccdb9da9c1e94f808eb899f4e9e32, type: 3}
+  - {fileID: 387143229154583335, guid: 50c13f6a30133294eb4597a94a790a4d, type: 3}
   topRooms:
   - {fileID: 7941682913099081793, guid: 60f409ce4d0ac5949adb3976ec2518e3, type: 3}
   - {fileID: 5957659332428609399, guid: 588ccdb9da9c1e94f808eb899f4e9e32, type: 3}

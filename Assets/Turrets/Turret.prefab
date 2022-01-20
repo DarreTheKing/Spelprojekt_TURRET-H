@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.5
-  range: 5
+  range: 20
   turretShotSource: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 5755058132791599672}
