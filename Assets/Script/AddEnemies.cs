@@ -20,7 +20,6 @@ public class AddEnemies : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Spawner.enemyAmmount += 10;
         if(enemycount == 1)
         {
             enemycount -= 1;

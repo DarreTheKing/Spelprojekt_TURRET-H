@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyCamera : MonoBehaviour
 {
-    public float timer = 60;
+    public float timer = 120;
     // Start is called before the first frame update
     void Start()
     {

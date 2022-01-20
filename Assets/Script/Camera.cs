@@ -19,21 +19,24 @@ public class Camera : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(cameraDirection == 1)
+        if (other.transform.tag == "Player")
         {
-            Instantiate(camera, transform.position + new Vector3(0, -10, -10), Quaternion.identity);
-        }
-        else if (cameraDirection == 2)
-        {
-            Instantiate(camera, transform.position + new Vector3(0, 10, -10), Quaternion.identity);
-        }
-        else if (cameraDirection == 3)
-        {
-            Instantiate(camera, transform.position + new Vector3(18, 0, -10), Quaternion.identity);
-        }
-        else if (cameraDirection == 4)
-        {
-            Instantiate(camera, transform.position + new Vector3(-18, 0, -10), Quaternion.identity);
+            if (cameraDirection == 1)
+            {
+                Instantiate(camera, transform.position + new Vector3(0, -10, -10), Quaternion.identity);
+            }
+            else if (cameraDirection == 2)
+            {
+                Instantiate(camera, transform.position + new Vector3(0, 10, -10), Quaternion.identity);
+            }
+            else if (cameraDirection == 3)
+            {
+                Instantiate(camera, transform.position + new Vector3(18, 0, -10), Quaternion.identity);
+            }
+            else if (cameraDirection == 4)
+            {
+                Instantiate(camera, transform.position + new Vector3(-18, 0, -10), Quaternion.identity);
+            }
         }
     }
 }

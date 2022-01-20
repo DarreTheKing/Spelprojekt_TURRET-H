@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb766aee2e720148b89bdced343d7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDirection: 1
+  cameraDirection: 2
   camera: {fileID: 5485885685770837740, guid: 1d211f9df23b65142b7042fa61bd4491, type: 3}
 --- !u!114 &7551067538601455697
 MonoBehaviour:
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8247a87885bdc42b398fe637f9d309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 5672416765258313530}
+  door: {fileID: 7377811765837032470}
 --- !u!114 &5836435027321616192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 6152636416200159301, guid: 542ded2ad333a524ba165e5b1e6fcea8, type: 3}
-  direction: 2
+  direction: 1
 --- !u!1 &2871994839531102173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb766aee2e720148b89bdced343d7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDirection: 2
+  cameraDirection: 1
   camera: {fileID: 5485885685770837740, guid: 1d211f9df23b65142b7042fa61bd4491, type: 3}
 --- !u!114 &6704705396646371498
 MonoBehaviour:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8247a87885bdc42b398fe637f9d309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 7377811765837032470}
+  door: {fileID: 5672416765258313530}
 --- !u!1 &7056521853933998794
 GameObject:
   m_ObjectHideFlags: 0
