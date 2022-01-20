@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     private float timer;
     public GameObject enemy;
-    public int enemyAmmount = 3;
+    public static int enemyAmmount = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            timer = Random.Range(7, 12);
+            timer = Random.Range(2, 5);
             enemyAmmount -= 1;
             Instantiate(enemy, transform.position, Quaternion.identity);
         }

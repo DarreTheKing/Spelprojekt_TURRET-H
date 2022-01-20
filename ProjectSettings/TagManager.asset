@@ -8,19 +8,14 @@ TagManager:
   - Door
   - SpawnPoint
   - Rooms
-  - Enemy
-  - projectile
-  - Health
-  - scrap
-  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - bullets
+  - 
   - Water
   - UI
-  - Enemy
+  - 
   - 
   - 
   - 
