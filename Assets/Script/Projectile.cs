@@ -38,13 +38,6 @@ public class Projectile : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         //This line of code will make move the bullet at the speed
         float distanceThisFrame = speed * Time.deltaTime;
-        /*This statement checks if the length of the direction vector is less than or equal
-          to the distance of the frame. And if it is, it will execute the logic within it*/
-        //if (dir.magnitude <= distanceThisFrame)
-        //{
-           // HitTarget();
-          //  return;
-        //}
         //This line of code makes the projectile move
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }

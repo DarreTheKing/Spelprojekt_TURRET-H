@@ -92,7 +92,7 @@ public class Turret : MonoBehaviour
         //This line of code makes a direction that will point towards an enemy
         Vector3 dir = target.position - transform.position;
         //This line of code will help the turret rotate itself to look at the direction of the target
-        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 270) * dir;
+        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 90    ) * dir;
         //These next lines of code help the partToRotate to rotate smoothly towards the target 
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
         Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
@@ -123,7 +123,7 @@ public class Turret : MonoBehaviour
     {
         //This line of code will instantiate the bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        turretShotSource.Play();
+        //turretShotSource.Play();
         //This line of code stores the bullet script in the turret script
         Projectile projectile = bulletGO.GetComponent<Projectile>();
         //This line of code will make the bullet seek a target if said bullet has a component.
@@ -131,5 +131,6 @@ public class Turret : MonoBehaviour
         {
             projectile.Seek(target);
         }
+        
     }
 }
