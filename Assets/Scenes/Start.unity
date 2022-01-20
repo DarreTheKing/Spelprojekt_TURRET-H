@@ -316,6 +316,10 @@ PrefabInstance:
       propertyPath: turret1
       value: 
       objectReference: {fileID: 6206592497604851530, guid: e6dbf1dddb248144dae04d0886673e97, type: 3}
+    - target: {fileID: 7179525719081823582, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: scrapAmount
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
 --- !u!1 &328317739
@@ -1100,12 +1104,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomRooms:
   - {fileID: 810744879522661693, guid: 5c9a9edf7aaddcc4b9cd2a9b854e1e58, type: 3}
+  - {fileID: 9167374581128791534, guid: 53cac252149caa9488e2b3aafc8ef257, type: 3}
+  - {fileID: 1900084135507407125, guid: cb392e147457b4f4fa2c1acf01c4c367, type: 3}
+  - {fileID: 387143229154583335, guid: 50c13f6a30133294eb4597a94a790a4d, type: 3}
   topRooms:
   - {fileID: 7941682913099081793, guid: 60f409ce4d0ac5949adb3976ec2518e3, type: 3}
   - {fileID: 5957659332428609399, guid: 289de738cad71b64fb8885a5029ac2cd, type: 3}
   leftRooms:
-  - {fileID: 8000240820425081306, guid: 6405cc949b9ad474583be1bd943fde73, type: 3}
+  - {fileID: 1775470810765669133, guid: 0c3e1a350ba075c44a8fcc322a8b2d99, type: 3}
   - {fileID: 4697402604365411126, guid: 43fc1e2247787e84892aabdc01ef9cb9, type: 3}
+  - {fileID: 8000240820425081306, guid: 6405cc949b9ad474583be1bd943fde73, type: 3}
   - {fileID: 2394020658886614579, guid: a46c86f88dab9ae43a80713633e64fa3, type: 3}
   rightRooms:
   - {fileID: 3485685257290066339, guid: cc432f6fb6eca6e44a37ef578b7e7253, type: 3}

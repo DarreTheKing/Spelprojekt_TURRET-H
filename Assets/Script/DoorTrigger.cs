@@ -16,15 +16,14 @@ public class DoorTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Spawner.enemyAmmount <= 0)
         {
-
             door.openDoor();
         }
+        if (Spawner.enemyAmmount > 0)
+        {
+            door.closeDoor();
+        }
 
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        this.door.closeDoor();
     }
 }

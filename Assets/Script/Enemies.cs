@@ -11,6 +11,7 @@ public class Enemies : MonoBehaviour
     private Rigidbody2D prb;
     public float timeBetweenAttack;
     public float attackRate;
+    public float health = 100;
     public Transform firepoint;
     private float bulletForce = 20;
     public Animator animator;
@@ -29,6 +30,11 @@ public class Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+            Spawner.enemyAmmount -= 1;
+        }
         timeBetweenAttack += Time.deltaTime;
 
         if (Vector3.Distance(target.position, transform.position) > stopRange)
@@ -62,7 +68,12 @@ public class Enemies : MonoBehaviour
             GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
             timeBetweenAttack = 0;
         }
-        
-
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == ("Bullet"))
+        {
+            health -= 25;
+        }
     }
 }

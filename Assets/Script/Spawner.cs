@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     private float timer;
     public GameObject enemy;
-    public static int enemyAmmount = 5;
+    public static int enemyAmmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,10 @@ public class Spawner : MonoBehaviour
         if(timer <= 0)
         {
             timer = Random.Range(2, 5);
-            enemyAmmount -= 1;
+            enemyAmmount += 1;
             Instantiate(enemy, transform.position, Quaternion.identity);
         }
-        if(enemyAmmount <= 0)
+        if(enemyAmmount >= 5)
         {
             Destroy(this.gameObject);
         }
