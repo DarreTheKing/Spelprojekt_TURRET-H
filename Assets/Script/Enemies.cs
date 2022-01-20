@@ -11,6 +11,7 @@ public class Enemies : MonoBehaviour
     private Rigidbody2D prb;
     public float timeBetweenAttack;
     public float attackRate;
+    [SerializeField]
     public float health = 100;
     public Transform firepoint;
     private float bulletForce = 20;
@@ -73,7 +74,7 @@ public class Enemies : MonoBehaviour
     {
         if(collision.transform.tag == ("Bullet"))
         {
-            health -= 25;
+           health -= 25;
         }
     }
 }

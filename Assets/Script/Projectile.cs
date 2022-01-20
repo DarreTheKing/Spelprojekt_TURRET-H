@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             HitTarget();
-            //return;
+            return;
         }
     }
 }
