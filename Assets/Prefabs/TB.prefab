@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea9316c00a679f4ebed667958a9cd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 7151415228143414755, guid: 0cac48da49e0f794b9179f77d2cceb00, type: 3}
+  enemySpawner: {fileID: 6152636416200159301, guid: 542ded2ad333a524ba165e5b1e6fcea8, type: 3}
   direction: 2
 --- !u!1 &7444191246916058784
 GameObject:
@@ -1652,5 +1652,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea9316c00a679f4ebed667958a9cd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 7151415228143414755, guid: 0cac48da49e0f794b9179f77d2cceb00, type: 3}
+  enemySpawner: {fileID: 6152636416200159301, guid: 542ded2ad333a524ba165e5b1e6fcea8, type: 3}
   direction: 1

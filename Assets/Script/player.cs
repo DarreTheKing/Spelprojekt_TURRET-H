@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+    public Image loseImage;
+    public Image replayImage;
+    public Image menuImage;
+    public Button replayButton;
+    public Button menuButton;
+    public Text menuText;
+    public Text replayText;
+
     public float speed;
 
     public Animator animator;
@@ -53,6 +61,11 @@ public class player : MonoBehaviour
             health = 100;
         }
 
+        if (scrapAmount < 25)
+        {
+            scrapAmount += Time.deltaTime;
+        }
+
     }
     private void FixedUpdate()
     {
@@ -97,8 +110,14 @@ public class player : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject);
-        yield return new WaitForSeconds(0.2f);
+        //Destroy(gameObject);
+        loseImage.enabled = true;
+        replayButton.enabled = true;
+        replayImage.enabled = true;
+        replayText.enabled = true;
+        menuImage.enabled = true;
+        menuButton.enabled = true;
+        menuText.enabled = true;
         Time.timeScale = 0;
     }
 }
