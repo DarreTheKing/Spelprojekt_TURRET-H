@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
     private float fireCountdown = 0f;
     //This line of code adds the range of the turret
     public float range = 5f;
-    public AudioSource turretShotSource;
+    //public AudioSource turretShotSource;
 
     //This header is here to mark the codes that unity requires for the turret to work
     [Header("Unity Setup Fields")]
@@ -35,7 +35,7 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turretShotSource = GetComponent<AudioSource>();
+        //turretShotSource = GetComponent<AudioSource>();
         //This line of code will repeat the search for a target every 0.5 seconds
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -123,7 +123,7 @@ public class Turret : MonoBehaviour
     {
         //This line of code will instantiate the bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        turretShotSource.Play();
+        //turretShotSource.Play();
         //This line of code stores the bullet script in the turret script
         Projectile projectile = bulletGO.GetComponent<Projectile>();
         //This line of code will make the bullet seek a target if said bullet has a component.

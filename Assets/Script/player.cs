@@ -23,7 +23,7 @@ public class player : MonoBehaviour
     HpUI hpAmount;
     private float turretAmount;
     public float health = 100;
-    AudioSource placeTurret;
+    public AudioSource placeTurret;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +47,7 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
         {
-          //  placeTurret.Play();
+            placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
@@ -95,7 +95,7 @@ public class player : MonoBehaviour
     private void Tdmg()
     {
         health -= 25;
-        if (health < 0)
+        if (health <= 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
             animator.SetBool("Dead", true);
@@ -113,7 +113,7 @@ public class player : MonoBehaviour
         replayImage.enabled = true;
         menuImage.enabled = true;
         menuButton.enabled = true;
-        Time.timeScale = 0;
+        speed = 0;
     }
 }
 

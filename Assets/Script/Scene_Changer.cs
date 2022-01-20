@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Changer : MonoBehaviour
 {
+    player player;
     [SerializeField]
     int sceneIndex; //gör så att man kan ändra vilken scen den ska gå till i indexen
 
+    public void Start()
+    {
+        player = GetComponent<player>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         RestartLevel(sceneIndex); //när knappen trycks på så förs man till scenen man har skrivit i scen indexen
@@ -15,6 +20,7 @@ public class Scene_Changer : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene("Start");
+        player.speed = 7;
     }
     public void Menu()
     {
