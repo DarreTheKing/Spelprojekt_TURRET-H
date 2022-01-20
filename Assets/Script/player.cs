@@ -10,8 +10,6 @@ public class player : MonoBehaviour
     public Image menuImage;
     public Button replayButton;
     public Button menuButton;
-    public Text menuText;
-    public Text replayText;
 
     public float speed;
 
@@ -113,10 +111,8 @@ public class player : MonoBehaviour
         loseImage.enabled = true;
         replayButton.enabled = true;
         replayImage.enabled = true;
-        replayText.enabled = true;
         menuImage.enabled = true;
         menuButton.enabled = true;
-        menuText.enabled = true;
         Time.timeScale = 0;
     }
 }

@@ -260,6 +260,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1038825903264824610, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278088677437177770, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454682433153120199, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212129105793137405, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529741005669139347, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862325899361564348, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94cf194715f138f4190d0b3162f083f7, type: 3}
+    - target: {fileID: 5862325899361564348, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7179525719081823576, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -319,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 7179525719081823582, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
       propertyPath: scrapAmount
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894964849397499386, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
