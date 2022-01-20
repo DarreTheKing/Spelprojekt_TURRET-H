@@ -45,9 +45,9 @@ public class player : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
+        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
         {
-            placeTurret.Play();
+          //  placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
@@ -58,10 +58,10 @@ public class player : MonoBehaviour
             health = 100;
         }
 
-        if (scrapAmount < 25)
-        {
-            scrapAmount += Time.deltaTime;
-        }
+       // if (scrapAmount < 25)
+       // {
+         //   scrapAmount += Time.deltaTime;
+       // }
 
     }
     private void FixedUpdate()
