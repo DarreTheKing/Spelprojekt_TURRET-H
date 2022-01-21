@@ -10,7 +10,7 @@ public class DoorTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        door.openDoor();
     }
 
     // Update is called once per frame

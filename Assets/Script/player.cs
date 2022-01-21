@@ -21,8 +21,8 @@ public class player : MonoBehaviour
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
     HpUI hpAmount;
-    private float turretAmount;
-    public float health = 100;
+    public static float turretAmount;
+    public float health = 200;
     public AudioSource placeTurret;
     // Start is called before the first frame update
     void Start()
@@ -38,8 +38,8 @@ public class player : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-       // scrapAmountShow.playerScrap = scrapAmount;
-       // hpAmount.hpAmount = health;
+        scrapAmountShow.playerScrap = scrapAmount;
+        hpAmount.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -47,7 +47,7 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
         {
-            //placeTurret.Play();
+            placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
             scrapAmount -= 25;
             turretAmount += 1;
@@ -58,10 +58,10 @@ public class player : MonoBehaviour
             health = 100;
         }
 
-       // if (scrapAmount < 25)
-       // {
-         //   scrapAmount += Time.deltaTime;
-       // }
+       if (scrapAmount < 25)
+       {
+         scrapAmount += Time.deltaTime;
+       }
 
     }
     private void FixedUpdate()

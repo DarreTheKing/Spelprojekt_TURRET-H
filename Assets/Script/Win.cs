@@ -31,7 +31,7 @@ public class Win : MonoBehaviour
             replayImage.enabled = true;
             menuImage.enabled = true;
             menuButton.enabled = true;
-            player.speed = 0;
+
         }
     }
 

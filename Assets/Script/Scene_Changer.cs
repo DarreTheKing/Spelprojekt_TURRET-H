@@ -19,8 +19,11 @@ public class Scene_Changer : MonoBehaviour
     }
     public void Replay()
     {
+        player.turretAmount = 0;
+        Spawner.enemyAmmount = 0;
         SceneManager.LoadScene("Start");
         player.speed = 7;
+
     }
     public void Menu()
     {
