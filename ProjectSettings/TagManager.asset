@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - Bullet
   - projectile
+  - Health
+  - scrap
+  - DoorStop
   layers:
   - Default
   - TransparentFX
