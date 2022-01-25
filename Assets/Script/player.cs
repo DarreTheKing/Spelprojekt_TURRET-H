@@ -10,8 +10,6 @@ public class player : MonoBehaviour
     public Image menuImage;
     public Button replayButton;
     public Button menuButton;
-    public Text menuText;
-    public Text replayText;
 
     public float speed;
 
@@ -23,9 +21,10 @@ public class player : MonoBehaviour
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
     HpUI hpAmount;
-    private float turretAmount;
-    public float health = 100;
-    AudioSource placeTurret;
+    public static float turretAmount;
+    public float health = 200;
+    public AudioSource placeTurret;
+    private bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,15 +39,14 @@ public class player : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-       // scrapAmountShow.playerScrap = scrapAmount;
-       // hpAmount.hpAmount = health;
+        scrapAmountShow.playerScrap = scrapAmount;
+        hpAmount.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        
 
-        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount > 25 && turretAmount < 3)
+        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3 && !isDead)
         {
             placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
@@ -60,11 +58,15 @@ public class player : MonoBehaviour
         {
             health = 100;
         }
-
-        if (scrapAmount < 25)
+        if (health < 0)
         {
-            scrapAmount += Time.deltaTime;
+            health = 0f;
         }
+
+       if (scrapAmount < 25)
+       {
+         scrapAmount += Time.deltaTime;
+       }
 
     }
     private void FixedUpdate()
@@ -83,12 +85,12 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("scrap"))
+        if (collision.transform.tag == ("scrap"))
         {
             scrapAmount += 15;
             Destroy(collision.gameObject);
         }
-        if (collision.transform.CompareTag("Health"))
+        if (collision.transform.tag == ("Health"))
         {
             health += 20;
             Destroy(collision.gameObject);
@@ -98,9 +100,10 @@ public class player : MonoBehaviour
     private void Tdmg()
     {
         health -= 25;
-        if (health < 0)
+        if (health <= 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
+            isDead = true;
             animator.SetBool("Dead", true);
             StartCoroutine(Death());
             
@@ -110,15 +113,12 @@ public class player : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(1.5f);
-        //Destroy(gameObject);
         loseImage.enabled = true;
         replayButton.enabled = true;
         replayImage.enabled = true;
-        replayText.enabled = true;
         menuImage.enabled = true;
         menuButton.enabled = true;
-        menuText.enabled = true;
-        Time.timeScale = 0;
+        speed = 0;
     }
 }
 

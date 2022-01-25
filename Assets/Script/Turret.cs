@@ -17,10 +17,10 @@ public class Turret : MonoBehaviour
     //This line of code adds the range of the turret
     public float range = 5f;
     public AudioSource turretShotSource;
+    private float timer = 15;
 
     //This header is here to mark the codes that unity requires for the turret to work
     [Header("Unity Setup Fields")]
-
     /*This line of code makes a variable, which creates an enemy tag that will be used for the
       enemy detection system*/
     public string enemyTag = "Enemy";
@@ -82,14 +82,24 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(timer <= 0)
+        {
+            player.turretAmount -= 1;
+            Destroy(this.gameObject);
+        }
+        timer -= Time.deltaTime;
+        
         //This line of code makes it so if the turret has no target it wont do anything
         if (target == null)
+        {
             return;
+        }
+       
 
         //This line of code makes a direction that will point towards an enemy
         Vector3 dir = target.position - transform.position;
         //This line of code will help the turret rotate itself to look at the direction of the target
-        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 270) * dir;
+        Vector3 rotatedVectorDir = Quaternion.Euler(0, 0, 90    ) * dir;
         //These next lines of code help the partToRotate to rotate smoothly towards the target 
         Quaternion lookRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: rotatedVectorDir);
         Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
@@ -120,11 +130,15 @@ public class Turret : MonoBehaviour
     {
         //This line of code will instantiate the bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        turretShotSource.Play();
+        
         //This line of code stores the bullet script in the turret script
         Projectile projectile = bulletGO.GetComponent<Projectile>();
+        turretShotSource.Play();
         //This line of code will make the bullet seek a target if said bullet has a component.
         if (projectile != null)
+        {
             projectile.Seek(target);
+        }
+        
     }
 }

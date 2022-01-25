@@ -11,10 +11,15 @@ public class Enemies : MonoBehaviour
     private Rigidbody2D prb;
     public float timeBetweenAttack;
     public float attackRate;
+    [SerializeField]
+    public float health = 100;
     public Transform firepoint;
     private float bulletForce = 20;
     public Animator animator;
     public float stopRange;
+    private float timer;
+    public AudioSource enemyshot;
+    public GameObject[] drops;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +27,19 @@ public class Enemies : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         prb = projectile.GetComponent<Rigidbody2D>();
         animator.SetBool("Walking", false);
-
+        timer = Random.Range(5, 10);
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0)
+        {
+            Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+            Spawner.enemyAmmount -= 1;
+            Destroy(this.gameObject);
+        }
         timeBetweenAttack += Time.deltaTime;
 
         if (Vector3.Distance(target.position, transform.position) > stopRange)
@@ -61,8 +72,14 @@ public class Enemies : MonoBehaviour
         {
             GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
             timeBetweenAttack = 0;
+            enemyshot.Play();
         }
-        
-
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == ("Bullet"))
+        {
+           health -= 25;
+        }
     }
 }
