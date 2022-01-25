@@ -24,6 +24,7 @@ public class player : MonoBehaviour
     public static float turretAmount;
     public float health = 200;
     public AudioSource placeTurret;
+    private bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class player : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
+        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3 && !isDead)
         {
             placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
@@ -56,6 +57,10 @@ public class player : MonoBehaviour
         if (health > 101)
         {
             health = 100;
+        }
+        if (health < 0)
+        {
+            health = 0f;
         }
 
        if (scrapAmount < 25)
@@ -98,6 +103,7 @@ public class player : MonoBehaviour
         if (health <= 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
+            isDead = true;
             animator.SetBool("Dead", true);
             StartCoroutine(Death());
             
@@ -107,7 +113,6 @@ public class player : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(1.5f);
-        //Destroy(gameObject);
         loseImage.enabled = true;
         replayButton.enabled = true;
         replayImage.enabled = true;
