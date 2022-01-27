@@ -15,10 +15,19 @@ public class RoomSpawner : MonoBehaviour
 	private RoomTemplates templates;
 	private int rand;
 	public bool spawned = false;
-	public float waitTime = 4f;
 	void Start()
 	{
-		Destroy(gameObject, waitTime);
+		Collider2D test = Physics2D.OverlapCircle(transform.position, 0.5f);
+        if (test != null)
+        {
+            if (test.transform.GetInstanceID() != gameObject.transform.GetInstanceID())
+            {
+				print("test id = " + test.gameObject.transform.GetInstanceID());
+				print("spawner id = " + gameObject.transform.GetInstanceID());
+				//Destroy(gameObject);
+				spawned = true;
+            }
+        }
 		templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
 		Invoke("Spawn", 0.1f);
 	}
@@ -58,7 +67,7 @@ public class RoomSpawner : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag("SpawnPoint"))
+		/*if (other.CompareTag("SpawnPoint"))
 		{
 			if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
 			{
@@ -66,6 +75,6 @@ public class RoomSpawner : MonoBehaviour
 				Destroy(gameObject);
 			}
 			spawned = true;
-		}
+		}*/
 	}
 }
