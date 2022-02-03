@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 8755101917374390340}
   - component: {fileID: 9123258419448599710}
   - component: {fileID: 96443227527215271}
+  - component: {fileID: 5551755449997073729}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -673,6 +674,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdaf69d7ba9a7cb42825c235137cb4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &5551755449997073729
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593062410480731015}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2894683468566635103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1723,7 @@ GameObject:
   - component: {fileID: 2543476433132775771}
   - component: {fileID: 8562143489783690460}
   - component: {fileID: 3881042359588488817}
+  - component: {fileID: 8937391438109640439}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -1787,6 +1810,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdaf69d7ba9a7cb42825c235137cb4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &8937391438109640439
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137379026010173572}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5249774360101925977
 GameObject:
   m_ObjectHideFlags: 0

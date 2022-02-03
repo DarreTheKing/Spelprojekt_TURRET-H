@@ -1355,6 +1355,8 @@ GameObject:
   - component: {fileID: 4986489647040167649}
   - component: {fileID: 4506241499597059777}
   - component: {fileID: 1620823185082334401}
+  - component: {fileID: 2447711396257847549}
+  - component: {fileID: 6253593872177979843}
   m_Layer: 0
   m_Name: Door (3)
   m_TagString: Untagged
@@ -1429,6 +1431,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 9045623029303456417}
+--- !u!114 &2447711396257847549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865403971871071174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaf69d7ba9a7cb42825c235137cb4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &6253593872177979843
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865403971871071174}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3898432364896043724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2366,8 @@ GameObject:
   - component: {fileID: 6987661340402917106}
   - component: {fileID: 4529728925563388654}
   - component: {fileID: 8652442557873369815}
+  - component: {fileID: 3253035790590375313}
+  - component: {fileID: 4842775907527380249}
   m_Layer: 0
   m_Name: Door (2)
   m_TagString: Untagged
@@ -2405,6 +2442,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 168164266543930237}
+--- !u!114 &3253035790590375313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367002810508911694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaf69d7ba9a7cb42825c235137cb4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &4842775907527380249
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367002810508911694}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6404583709877829371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2663,8 @@ GameObject:
   - component: {fileID: 8376835382217978602}
   - component: {fileID: 2395056225450096855}
   - component: {fileID: 8702789582681401620}
+  - component: {fileID: 8378525332009340255}
+  - component: {fileID: 52099950068813032}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -2667,6 +2739,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 8678360488238583184}
+--- !u!114 &8378525332009340255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100974876884732453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaf69d7ba9a7cb42825c235137cb4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &52099950068813032
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100974876884732453}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7143018419323000701
 GameObject:
   m_ObjectHideFlags: 0

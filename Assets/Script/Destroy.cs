@@ -11,7 +11,7 @@ public class Destroy : MonoBehaviour
         {
 			Destroy(other.gameObject);
         }
-		if (other.transform.tag == ("Wall"))
+		if (other.CompareTag("Stopp"))
         {
 			Destroy(other.gameObject);
         }
