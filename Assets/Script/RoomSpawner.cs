@@ -10,7 +10,7 @@ public class RoomSpawner : MonoBehaviour
 	// 2 --> need top door
 	// 3 --> need left door
 	// 4 --> need right door
-	//public static int maxRooms = 50;
+	public static int maxRooms = 20;
 	public static int currentNumRooms = 0;
 
 	private RoomTemplates templates;
@@ -19,51 +19,17 @@ public class RoomSpawner : MonoBehaviour
 	void Start()
 	{
 		templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-
-		/*Collider2D test = Physics2D.OverlapCircle(transform.position, 4f);
-        if (test != null)
-        {
-            if (test.transform.GetInstanceID() != gameObject.transform.GetInstanceID())
-            {
-				//print("test id = " + test.gameObject.transform.GetInstanceID());
-				//print("spawner id = " + gameObject.transform.GetInstanceID());
-				CancelInvoke();
-				if (test.GetComponent<RoomSpawner>() != null)
-				{
-					test.GetComponent<RoomSpawner>().CancelInvoke();
-					test.GetComponent<RoomSpawner>().spawned = true;
-
-				}
-				spawned = true;
-				Destroy(test.gameObject);
-				Destroy(gameObject);
-				print(name + spawned);
-				return;
-            }
-			else
-			{
-				Spawn();
-			}
-		} 
-		*/
 		Invoke("Spawn", 0.1f);
-		
-		/*if (currentNumRooms < maxRooms)
-        {
-			
-        }
-        else
-        {
-			//Destroy(gameObject);
-        }*/
-		
+		if (currentNumRooms > maxRooms)
+		{
+			if (spawned == false)
+			{
+				Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+				spawned = true;
+			}
+		}
 	}
 
-    /*private void OnDrawGizmos()
-    {
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(transform.position, 4f);
-    }*/
 
     void Spawn()
 	{
@@ -126,12 +92,7 @@ public class RoomSpawner : MonoBehaviour
 					Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
 				}
 			}
-				//currentNumRooms += 1;
 				spawned = true;
-            /*else
-            {
-				Instantiate(templates.closedRoom, transform.position, templates.rightRooms[rand].transform.rotation);
-			}*/
 		}
 	}
 

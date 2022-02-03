@@ -13,6 +13,7 @@ public class RoomTemplates : MonoBehaviour
     public GameObject rightStart;
     public GameObject upStart;
     public GameObject downStart;
+
     public List<GameObject> rooms;
     public float waitTime;
     private bool spawnedWin;
