@@ -9,6 +9,10 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
     public GameObject closedRoom;
+    public GameObject leftStart;
+    public GameObject rightStart;
+    public GameObject upStart;
+    public GameObject downStart;
 
     public List<GameObject> rooms;
     public float waitTime;

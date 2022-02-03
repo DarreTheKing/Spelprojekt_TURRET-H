@@ -46,6 +46,16 @@ public class player : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
+        if(animator.GetFloat("Speed")>0.01)
+        {
+            animator.SetFloat("IdleHori", movement.x);
+
+            if(animator.GetFloat("Horizontal") == 0)
+            {
+                animator.SetFloat("IdleHori", 1f);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3 && !isDead)
         {
             placeTurret.Play();
