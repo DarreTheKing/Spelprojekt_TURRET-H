@@ -46,7 +46,7 @@ public class player : MonoBehaviour
         
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        //scrapAmountShow.playerScrap = scrapAmount;
+        scrapAmountShow.playerScrap = scrapAmount;
         hp.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
