@@ -13,7 +13,7 @@ public class Enemybullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
         direction = (player.transform.position - transform.position).normalized * speed; 

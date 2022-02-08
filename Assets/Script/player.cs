@@ -20,7 +20,7 @@ public class player : MonoBehaviour
     public GameObject turret1;
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
-    HpUI hpAmount;
+    HpUI hp;
     public static float turretAmount;
     public float health = 100;
     private float maxHp = 100;
@@ -35,7 +35,7 @@ public class player : MonoBehaviour
         placeTurret = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
-        hpAmount = FindObjectOfType<HpUI>();
+        hp = FindObjectOfType<HpUI>();
         health = maxHp;
         healthbar.SetMaxHealth(maxHp);
 
@@ -43,11 +43,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         scrapAmountShow.playerScrap = scrapAmount;
-
-        hpAmount.hpAmount = health;
+        hp.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
