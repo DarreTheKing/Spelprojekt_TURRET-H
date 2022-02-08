@@ -11,7 +11,7 @@ public class Destroy : MonoBehaviour
         {
 			Destroy(other.gameObject);
         }
-		if (other.CompareTag("Stopp"))
+		if (other.transform.tag == ("Stopp"))
         {
 			Destroy(other.gameObject);
         }
