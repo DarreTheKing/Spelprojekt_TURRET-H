@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HpUI : MonoBehaviour
+public class transition : MonoBehaviour
 {
-    public Text hpText;
-    public float hpAmount;
-
+    public Image tranim;
+    private float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        hpText.text = hpAmount.ToString();
+        timer += Time.deltaTime;
+        if (timer > 2)
+        {
+            tranim.enabled = false;
+        }
     }
 }

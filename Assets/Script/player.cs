@@ -22,9 +22,13 @@ public class player : MonoBehaviour
     scrapui scrapAmountShow;
     HpUI hpAmount;
     public static float turretAmount;
-    public float health = 200;
+    public float health = 100;
+    private float maxHp = 100;
     public AudioSource placeTurret;
     private bool isDead = false;
+    Enemies damage;
+    public HpSlider healthbar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,8 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
         hpAmount = FindObjectOfType<HpUI>();
+        health = maxHp;
+        healthbar.SetMaxHealth(maxHp);
 
     }
     // Update is called once per frame
@@ -40,6 +46,7 @@ public class player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         scrapAmountShow.playerScrap = scrapAmount;
+
         hpAmount.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
@@ -88,6 +95,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("projectile"))
         {
+            damage=collision.transform.parent.GetComponent<Enemies>();
             Tdmg();
             Destroy(collision.gameObject);
         }
@@ -109,7 +117,8 @@ public class player : MonoBehaviour
 
     private void Tdmg()
     {
-        health -= 25;
+        health -= damage.damage;
+        healthbar.SetHP(health);
         if (health <= 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
