@@ -19,6 +19,7 @@ public class Scene_Changer : MonoBehaviour
     }
     public void Replay()
     {
+        RoomSpawner.currentNumRooms = 0;
         player.turretAmount = 0;
         Spawner.enemyAmmount = 0;
         SceneManager.LoadScene("Start");
