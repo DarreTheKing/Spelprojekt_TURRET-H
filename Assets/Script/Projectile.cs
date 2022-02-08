@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     //This line of code will be used to access the Particle prefab
     public GameObject impactEffect;
     //This function will be used for setting the target
+    Vector3 dir;
     public void Seek(Transform _target)
     {
 
@@ -20,7 +21,13 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        /*This line of code will find the direction that the bullet needs to point in to
+          face it's target*/
+        dir = target.position - transform.position;
+        //This line of code will make move the bullet at the speed
+        float distanceThisFrame = speed * Time.deltaTime;
+        //This line of code makes the projectile move
+        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
     // Update is called once per frame
@@ -33,9 +40,6 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        /*This line of code will find the direction that the bullet needs to point in to
-          face it's target*/
-        Vector3 dir = target.position - transform.position;
         //This line of code will make move the bullet at the speed
         float distanceThisFrame = speed * Time.deltaTime;
         //This line of code makes the projectile move
@@ -55,8 +59,10 @@ public class Projectile : MonoBehaviour
     //This code just turns on collision detection
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //This line of code checks if it collides with an object that has the tag "Enemy"
         if (collision.transform.tag == "Enemy")
         {
+            //This line of code will then execute the HitTarget logic
             HitTarget();
             return;
         }
