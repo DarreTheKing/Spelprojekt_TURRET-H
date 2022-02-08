@@ -10,7 +10,7 @@ public class RoomSpawner : MonoBehaviour
 	// 2 --> need top door
 	// 3 --> need left door
 	// 4 --> need right door
-	public static int maxRooms = 1000;
+	public static int maxRooms = 20;
 	public static int currentNumRooms = 0;
 
 	private RoomTemplates templates;
