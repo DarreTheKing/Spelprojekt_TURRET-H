@@ -17,7 +17,7 @@ public class Camera : MonoBehaviour
     {
         
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.tag == "Player")
         {
@@ -62,6 +62,10 @@ public class Camera : MonoBehaviour
                 Instantiate(camera, transform.position + new Vector3(-18, 0, -10), Quaternion.identity);
                 
             }
+        }
+        if(other.CompareTag("Wall"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
