@@ -33,6 +33,10 @@ public class Win : MonoBehaviour
             menuButton.enabled = true;
 
         }
+        if(other.gameObject.tag == ("SpawnPoint"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }
