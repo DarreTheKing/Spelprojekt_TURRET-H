@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     //This variable will be used for the targeting system for the bullet
     private Transform target;
     //This variable will be used for the speed of the bullet
-    public float speed = 70f;
+    public float speed = 10f;
     //This line of code will be used to access the Particle prefab
     public GameObject impactEffect;
     //This function will be used for setting the target
