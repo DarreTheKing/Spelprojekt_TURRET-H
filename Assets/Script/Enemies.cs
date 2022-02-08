@@ -20,6 +20,7 @@ public class Enemies : MonoBehaviour
     private float timer;
     public AudioSource enemyshot;
     public GameObject[] drops;
+    public float damage = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,7 @@ public class Enemies : MonoBehaviour
         timeBetweenAttack += Time.deltaTime;
         if (timeBetweenAttack >= attackRate)
         {
-            GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject bulletGO = (GameObject)Instantiate(projectile, transform.position, Quaternion.identity, transform);
             timeBetweenAttack = 0;
             enemyshot.Play();
         }

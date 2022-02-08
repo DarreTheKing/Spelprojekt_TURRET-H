@@ -22,8 +22,13 @@ public class player : MonoBehaviour
     scrapui scrapAmountShow;
     HpUI hpAmount;
     public static float turretAmount;
-    public float health = 200;
+    public float health = 100;
+    private float maxHp = 100;
     public AudioSource placeTurret;
+    private bool isDead = false;
+    Enemies damage;
+    public HpSlider healthbar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,8 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         scrapAmountShow = FindObjectOfType<scrapui>();
         hpAmount = FindObjectOfType<HpUI>();
+        health = maxHp;
+        healthbar.SetMaxHealth(maxHp);
 
     }
     // Update is called once per frame
@@ -39,13 +46,24 @@ public class player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         scrapAmountShow.playerScrap = scrapAmount;
+
         hpAmount.hpAmount = health;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3)
+        if(animator.GetFloat("Speed")>0.01)
+        {
+            animator.SetFloat("IdleHori", movement.x);
+
+            if(animator.GetFloat("Horizontal") == 0)
+            {
+                animator.SetFloat("IdleHori", 1f);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3 && !isDead)
         {
             placeTurret.Play();
             Instantiate(turret1, rb.position, Quaternion.identity);
@@ -56,6 +74,10 @@ public class player : MonoBehaviour
         if (health > 101)
         {
             health = 100;
+        }
+        if (health < 0)
+        {
+            health = 0f;
         }
 
        if (scrapAmount < 25)
@@ -73,6 +95,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("projectile"))
         {
+            damage=collision.transform.parent.GetComponent<Enemies>();
             Tdmg();
             Destroy(collision.gameObject);
         }
@@ -94,10 +117,12 @@ public class player : MonoBehaviour
 
     private void Tdmg()
     {
-        health -= 25;
+        health -= damage.damage;
+        healthbar.SetHP(health);
         if (health <= 0)
         {
             rb.bodyType = RigidbodyType2D.Static;
+            isDead = true;
             animator.SetBool("Dead", true);
             StartCoroutine(Death());
             
@@ -107,7 +132,6 @@ public class player : MonoBehaviour
     IEnumerator Death()
     {
         yield return new WaitForSeconds(1.5f);
-        //Destroy(gameObject);
         loseImage.enabled = true;
         replayButton.enabled = true;
         replayImage.enabled = true;

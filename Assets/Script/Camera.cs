@@ -63,5 +63,9 @@ public class Camera : MonoBehaviour
                 
             }
         }
+        if(other.CompareTag("Wall"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

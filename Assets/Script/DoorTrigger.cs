@@ -6,7 +6,6 @@ public class DoorTrigger : MonoBehaviour
 {
     [SerializeField] private DoorAnimation door;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +23,6 @@ public class DoorTrigger : MonoBehaviour
         {
             door.closeDoor();
         }
-
     }
+
 }
