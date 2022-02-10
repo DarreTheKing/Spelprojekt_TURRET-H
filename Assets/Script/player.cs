@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     //gjort av Zakk
+
     //variabler start
     public Image loseImage;
     public Image replayImage;

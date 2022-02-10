@@ -358,6 +358,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7179525719081823578, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179525719081823578, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179525719081823578, guid: 8804e27dde0d4fe4e8967e8f3bd144bd, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
