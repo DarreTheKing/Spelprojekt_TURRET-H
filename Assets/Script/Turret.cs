@@ -32,6 +32,8 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     //This line of code will be used to create a firePoint for the turret
     public Transform firePoint;
+    //This line of code will be used to make the turret access the Turret1Particle prefab
+    public GameObject TurretParticleEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,8 +84,11 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //This line of code will check if the timer reaches zero
         if(timer <= 0)
         {
+            /*It will then subtract 1 from the turretAmount counter in the player script
+              and destroy the turret itself*/
             player.turretAmount -= 1;
             Destroy(this.gameObject);
         }
@@ -130,9 +135,11 @@ public class Turret : MonoBehaviour
     {
         //This line of code will instantiate the bullet
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
+        //This line of code will instantiate the particle effect
+        GameObject Turret1Shot = (GameObject)Instantiate(TurretParticleEffect, firePoint.position, firePoint.rotation);
         //This line of code stores the bullet script in the turret script
         Projectile projectile = bulletGO.GetComponent<Projectile>();
+        //This line of code plays the turret shot sound
         turretShotSource.Play();
         //This line of code will make the bullet seek a target if said bullet has a component.
         if (projectile != null)

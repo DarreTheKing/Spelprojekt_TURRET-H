@@ -198,6 +198,7 @@ MonoBehaviour:
   turnSpeed: 10
   bulletPrefab: {fileID: 1294221346005119378, guid: 6684ffc3b7172024e8b8efc090eb051e, type: 3}
   firePoint: {fileID: 6938572666998993019}
+  TurretParticleEffect: {fileID: 3500996462752866731, guid: fb17da861d315484abdb091103716e83, type: 3}
 --- !u!212 &1138439224500062174
 SpriteRenderer:
   m_ObjectHideFlags: 0
