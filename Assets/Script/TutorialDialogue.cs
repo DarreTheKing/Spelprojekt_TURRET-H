@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TutorialDialogue : MonoBehaviour
 {
+    //Zakk men används inte
     public Text texto;
     private float textamount = 0;
     private void Start()
