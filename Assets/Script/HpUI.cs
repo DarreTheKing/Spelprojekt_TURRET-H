@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HpUI : MonoBehaviour
 {
+    //Zakk
     public Text hpText;
     public float hpAmount;
 
@@ -16,6 +17,6 @@ public class HpUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hpText.text = hpAmount.ToString();
+        hpText.text = hpAmount.ToString(); //skriver ut mängden liv spelaren har
     }
 }
