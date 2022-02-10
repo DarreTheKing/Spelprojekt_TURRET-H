@@ -16,8 +16,13 @@ public class Turret : MonoBehaviour
     private float fireCountdown = 0f;
     //This line of code adds the range of the turret
     public float range = 5f;
+    //This line of code helps play the audio source
     public AudioSource turretShotSource;
-    private float timer = 15;
+    //This line of code creates a variable which will be used for the destruction time
+    public float timer = 15;
+    //This line of code will be used for the damage of the bullets
+    public float damage = 25;
+    
 
     //This header is here to mark the codes that unity requires for the turret to work
     [Header("Unity Setup Fields")]
@@ -134,7 +139,7 @@ public class Turret : MonoBehaviour
     void Shoot()
     {
         //This line of code will instantiate the bullet
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation, transform);
         //This line of code will instantiate the particle effect
         GameObject Turret1Shot = (GameObject)Instantiate(TurretParticleEffect, firePoint.position, firePoint.rotation);
         //This line of code stores the bullet script in the turret script

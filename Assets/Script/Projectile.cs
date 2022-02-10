@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     public GameObject impactEffect;
     //This function will be used for setting the target
     Vector3 dir;
+
     public void Seek(Transform _target)
     {
 
