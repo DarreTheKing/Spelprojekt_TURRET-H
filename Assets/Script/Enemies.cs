@@ -23,6 +23,7 @@ public class Enemies : MonoBehaviour
     public AudioSource enemyshot;
     public GameObject[] drops;
     public float damage = 25;
+    Turret tdamage;
     //Slut av variabler
 
     // Start is called before the first frame update
@@ -85,7 +86,8 @@ public class Enemies : MonoBehaviour
     {
         if(collision.transform.tag == ("Bullet")) //vid kollision med "Bullet" tar fienden skada
         {
-           health -= 25;
+            tdamage = collision.transform.parent.GetComponent<Turret>();
+            health -= tdamage.damage;
         }
     }
 }

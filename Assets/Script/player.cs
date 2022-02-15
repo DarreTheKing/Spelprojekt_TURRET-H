@@ -14,6 +14,9 @@ public class player : MonoBehaviour
     public Button replayButton;
     public Button menuButton;
 
+    public Image turretIm1;
+    public Image turretIm2;
+
     public float speed;
 
     public Animator animator;
@@ -21,9 +24,11 @@ public class player : MonoBehaviour
     private Rigidbody2D rb;
     Vector2 movement;
     public GameObject turret1;
+    public GameObject turret2;
     public float scrapAmount = 0;
     scrapui scrapAmountShow;
     HpUI hp;
+    turretDesc turretdesc;
     public static float turretAmount;
     public float health = 100;
     private float maxHp = 100;
@@ -31,6 +36,8 @@ public class player : MonoBehaviour
     private bool isDead = false;
     Enemies damage;
     public HpSlider healthbar;
+    private GameObject currentTurret;
+    private float scrapcost;
     //Variabler slut
 
     // Start is called before the first frame update
@@ -40,8 +47,13 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();  //hämtar spelaren rigidbody
         scrapAmountShow = FindObjectOfType<scrapui>(); //"refererar" till scarpui scriptet
         hp = FindObjectOfType<HpUI>(); //"refererar" till HpUI scriptet
+        turretdesc = FindObjectOfType<turretDesc>(); //"refererar" till turretDesc scriptet
         health = maxHp; //sätter spelarens liv till max
         healthbar.SetMaxHealth(maxHp); //sätter healthbaren till maxhp
+        currentTurret = turret1;
+        turretIm1.enabled = true;
+        turretdesc.turrettext = 1;
+        scrapcost = 25;
 
     }
     // Update is called once per frame
@@ -73,16 +85,33 @@ public class player : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= 25 && turretAmount < 3 && !isDead)
+        if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= scrapcost && turretAmount < 3 && !isDead)
         { //om spelaren trycker på space och har tillräckligt med scrap men har inte 3 turrets ute plus inte är död
             //spelas ett ljud, en turret placeras, scrap mängden sänks och turret mängden ökas
             placeTurret.Play();
-            Instantiate(turret1, rb.position, Quaternion.identity);
-            scrapAmount -= 25;
+            Instantiate(currentTurret, rb.position, Quaternion.identity);
+            scrapAmount -= scrapcost;
             turretAmount += 1;
         }
 
-        if (health > 101) //stoppar spelaren från att ha mer än 100 liv
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            currentTurret = turret1;
+            turretIm2.enabled = false;
+            turretIm1.enabled = true;
+            turretdesc.turrettext = 1;
+            scrapcost = 25;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentTurret = turret2;
+            turretIm1.enabled = false;
+            turretIm2.enabled = true;
+            turretdesc.turrettext = 2;
+            scrapcost = 40;
+        }
+
+        if (health > 101) //stoppar spelaren från att ha mer än 101 liv
         {
             health = 100;
         }

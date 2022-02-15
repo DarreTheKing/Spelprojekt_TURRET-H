@@ -190,11 +190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0cb91bf612245b489b4a60012f08cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 4
   range: 10
   turretShotSource: {fileID: 3835180673677118716}
   timer: 7.5
-  damage: 10
+  damage: 7
   enemyTag: Enemy
   partToRotate: {fileID: 3835180673557643932}
   turnSpeed: 10

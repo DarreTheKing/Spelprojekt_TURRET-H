@@ -16,7 +16,7 @@ public class AddEnemies : MonoBehaviour
         if(enemycount == 1)
         {
             enemycount -= 1;
-            //Spawnar fyra spawners i varje hörn, beroende på hållet spawnas de olika
+            //Spawnar fyra spawners i varje hörn, beroende på hållet av rummet spawnas de olika
             if (direction == 1)
             {
                 
