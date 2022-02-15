@@ -40,19 +40,25 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn()
 	{
+		//Kollar om det tidigare har spawnats ett rum
 		if (spawned == false)
 		{
+			//Kollar vilket håll rummet behöver ha en dörr åt
 			if (openingDirection == 1)
 			{
+				//Ökar mängden skapade rum
 				currentNumRooms += 1;
+				//Skapar ett speciellt startrum om det har skapats mindre än 4 rum
 				if (currentNumRooms < 4)
 				{
 					Instantiate(templates.downStart, transform.position, Quaternion.identity);
 				}
-				// Need to spawn a room with a BOTTOM door.
+				//Annars skapar den ett vanligt rum med dörren åt det hållet
 				else
 				{
+					//Sätter rand till ett slumpmässigt nummer som är som max lika långt som mängden rum åt det hållet
 					rand = Random.Range(0, templates.bottomRooms.Length);
+					//Skapar ett slumpmässigt rum i arrayen av hållet  
 					Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
 				}
 			}
@@ -63,7 +69,6 @@ public class RoomSpawner : MonoBehaviour
 				{
 					Instantiate(templates.upStart, transform.position, Quaternion.identity);
 				}
-				// Need to spawn a room with a TOP door.
 				else
 				{
 					rand = Random.Range(0, templates.topRooms.Length);
@@ -78,7 +83,6 @@ public class RoomSpawner : MonoBehaviour
 					Instantiate(templates.leftStart, transform.position, Quaternion.identity);
 				}
 
-				// Need to spawn a room with a LEFT door.
 				else
 				{
 					rand = Random.Range(0, templates.leftRooms.Length);
@@ -92,27 +96,29 @@ public class RoomSpawner : MonoBehaviour
 				{
 					Instantiate(templates.rightStart, transform.position, Quaternion.identity);
 				}
-				// Need to spawn a room with a RIGHT door.
 				else
 				{
 					rand = Random.Range(0, templates.rightRooms.Length);
 					Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
 				}
 			}
+			//Gör så att det inte spawnar flera rum när ett är spawnat
 				spawned = true;
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		//Kollar om det finns 2 spawnpoints på samma ställe som båda inte spawnar ett rum
 		if (other.CompareTag("SpawnPoint"))
 		{
 			if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
 			{
+				//Skapar ett tomt rum istället så att man inte ska kunna ta sig ut ur dungeonen
 				Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
 				Destroy(this.gameObject);
-				Debug.Log("Destroy");
 			}
+			//skapr inga fler rum på samma ställe
 			spawned = true;
 		}
 	}
