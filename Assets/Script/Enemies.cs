@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
+    //Zakk
+    //Start av variabler
     public float speed;
     private Transform target;
     private Rigidbody2D rb;
@@ -21,33 +23,36 @@ public class Enemies : MonoBehaviour
     public AudioSource enemyshot;
     public GameObject[] drops;
     public float damage = 25;
+    //Slut av variabler
+
     // Start is called before the first frame update
     void Start()
     {
+        //Hämtar spelarens position
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        rb = GetComponent<Rigidbody2D>();
-        prb = projectile.GetComponent<Rigidbody2D>();
-        animator.SetBool("Walking", false);
-        timer = Random.Range(5, 10);
+        rb = GetComponent<Rigidbody2D>();//Hämtar fiendens rigidbody
+        prb = projectile.GetComponent<Rigidbody2D>(); //Hämtar projectils rigidbody
+        animator.SetBool("Walking", false); //gör så fienden börjar i idle animation
+        timer = Random.Range(5, 10); //timer mellan fiendes "Skrik" men användes inte
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        if(health <= 0) //om fienden dör placers antingen ett health pickup eller scrap pickup
         {
             Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
             Spawner.enemyAmmount -= 1;
             Destroy(this.gameObject);
         }
-        timeBetweenAttack += Time.deltaTime;
+        timeBetweenAttack += Time.deltaTime; //ökar timebetweenattack varje sekund
 
-        if (Vector3.Distance(target.position, transform.position) > stopRange)
+        if (Vector3.Distance(target.position, transform.position) > stopRange) //Om spelaren är tillräckligt långt bort startas move funktionen
         {
             Move();
         }
-        else
+        else //om spelaren är tillräckligt nära startas shoot funktionen
         {
             Shoot();
         }
@@ -55,7 +60,7 @@ public class Enemies : MonoBehaviour
 
     }
 
-    private void Move()
+    private void Move() //flyttar fienden mot spelaren och ser till att rätt animationer spelas
     {
         animator.SetBool("Walking", true);
         animator.SetFloat("VelocityX", (target.position.x - transform.position.x));
@@ -65,7 +70,7 @@ public class Enemies : MonoBehaviour
 
 
 
-    private void Shoot()
+    private void Shoot() //skjuter mot spelaren
     {
         animator.SetBool("Walking", false);
         timeBetweenAttack += Time.deltaTime;
@@ -78,7 +83,7 @@ public class Enemies : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == ("Bullet"))
+        if(collision.transform.tag == ("Bullet")) //vid kollision med "Bullet" tar fienden skada
         {
            health -= 25;
         }
