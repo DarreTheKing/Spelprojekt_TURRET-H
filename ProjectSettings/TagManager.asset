@@ -16,15 +16,14 @@ TagManager:
   - DoorStop
   - Pause
   - Stopp
-  - Pause_Cam
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
