@@ -15,11 +15,12 @@ TagManager:
   - scrap
   - DoorStop
   - Pause
+  - Stopp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

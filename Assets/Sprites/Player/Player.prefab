@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8657912006607348632}
   - component: {fileID: 3667330175183346636}
   - component: {fileID: 7894964849397499386}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4450769948809908913}
   - component: {fileID: 4688384592610245013}
   - component: {fileID: 8886793471390693266}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6647653488206090924}
   - component: {fileID: 8078760884345694712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LoseButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 1038825903264824610}
   - component: {fileID: 8918049591570463290}
   - component: {fileID: 5862325899361564348}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 2245230033820430465}
   - component: {fileID: 8456027353173761309}
   - component: {fileID: 4529741005669139347}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Lose Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 3212129105793137405}
   - component: {fileID: 88354624381293603}
   - component: {fileID: 2454682433153120199}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Replay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 7179525719081823582}
   - component: {fileID: 7179525719081823583}
   - component: {fileID: 7179525719081823580}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,12 +597,16 @@ MonoBehaviour:
   menuImage: {fileID: 7894964849397499386}
   replayButton: {fileID: 2454682433153120199}
   menuButton: {fileID: 2278088677437177770}
+  turretIm1: {fileID: 0}
+  turretIm2: {fileID: 0}
   speed: 7
   animator: {fileID: 7179525719081823579}
   turret1: {fileID: 6206592497604851530, guid: e6dbf1dddb248144dae04d0886673e97, type: 3}
+  turret2: {fileID: 0}
   scrapAmount: 0
   health: 100
   placeTurret: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!50 &7179525719081823583
 Rigidbody2D:
   serializedVersion: 4
@@ -661,7 +665,7 @@ GameObject:
   - component: {fileID: 5720340257289869629}
   - component: {fileID: 7915808341840637417}
   - component: {fileID: 2278088677437177770}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
