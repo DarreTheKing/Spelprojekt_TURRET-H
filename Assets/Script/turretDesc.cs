@@ -14,7 +14,7 @@ public class turretDesc : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //gör så att specefika texter vissas beroende på vad för värde turrettext har
     {
         if (turrettext == 1)
         {

@@ -50,10 +50,10 @@ public class player : MonoBehaviour
         turretdesc = FindObjectOfType<turretDesc>(); //"refererar" till turretDesc scriptet
         health = maxHp; //sätter spelarens liv till max
         healthbar.SetMaxHealth(maxHp); //sätter healthbaren till maxhp
-        currentTurret = turret1;
-        turretIm1.enabled = true;
-        turretdesc.turrettext = 1;
-        scrapcost = 25;
+        currentTurret = turret1;  //sätter nuvarande turret till turret 1
+        turretIm1.enabled = true; //sätter igång första turret bilden
+        turretdesc.turrettext = 1; //gör så att turretdesc är 1
+        scrapcost = 25; //sätter scrapcost till 25
 
     }
     // Update is called once per frame
@@ -86,15 +86,15 @@ public class player : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= scrapcost && turretAmount < 3 && !isDead)
-        { //om spelaren trycker på space och har tillräckligt med scrap men har inte 3 turrets ute plus inte är död
-            //spelas ett ljud, en turret placeras, scrap mängden sänks och turret mängden ökas
+        { /*om spelaren trycker på space och har tillräckligt med scrap men har inte 3 turrets ute plus inte är död
+            spelas ett ljud, en turret placeras, scrap mängden sänks och turret mängden ökas*/
             placeTurret.Play();
             Instantiate(currentTurret, rb.position, Quaternion.identity);
             scrapAmount -= scrapcost;
             turretAmount += 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q)) //ändrar nuvarande turret till första och activerar dess bild plus text
         {
             currentTurret = turret1;
             turretIm2.enabled = false;
@@ -102,7 +102,7 @@ public class player : MonoBehaviour
             turretdesc.turrettext = 1;
             scrapcost = 25;
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //ändrar nuvarande turret till andra och activerar dess bild pluss text
         {
             currentTurret = turret2;
             turretIm1.enabled = false;
