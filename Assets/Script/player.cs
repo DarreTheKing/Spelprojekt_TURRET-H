@@ -63,11 +63,7 @@ public class player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //gör så att scrap mängden från scrapui scriptet är det samma som spelaren har
-        scrapAmountShow.playerScrap = scrapAmount;
-
-        hp.hpAmount = health; //gör så det som visar spelarens liv är det samma som mängden liv spelaren har
-
+        
         //gör så animatorn spelar rätt animationer
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -83,6 +79,10 @@ public class player : MonoBehaviour
                 animator.SetFloat("IdleHori", 1f);
             }
         }
+        //gör så att scrap mängden från scrapui scriptet är det samma som spelaren har
+        scrapAmountShow.playerScrap = scrapAmount;
+
+        hp.hpAmount = health; //gör så det som visar spelarens liv är det samma som mängden liv spelaren har
 
 
         if (Input.GetKeyDown(KeyCode.Space) && scrapAmount >= scrapcost && turretAmount < 3 && !isDead)
