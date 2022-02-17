@@ -10,6 +10,6 @@ public class Options : MonoBehaviour
     }
     public void SetFullscreen(bool isFullscreen)
     {
-        Screen.fullScreen = isFullscreen;
+        Screen.fullScreen = isFullscreen; //gör så att man kan ändra mellan fullscreen och ej fullscreen - Darian
     }
 }
