@@ -8,10 +8,12 @@ public class Pause_Room : MonoBehaviour
     Transform target;
     private int leaveMenu = 0;
     Vector3 originalPos;
+    [SerializeField]
+    string Pause;
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag(Pause).transform;
     }
 
     // Update is called once per frame
