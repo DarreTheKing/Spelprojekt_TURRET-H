@@ -20,17 +20,17 @@ public class AddEnemies : MonoBehaviour
             if (direction == 1)
             {
                 
-                Instantiate(enemySpawner, transform.position + new Vector3(16, 14, 0), Quaternion.identity);
+                Instantiate(enemySpawner, transform.position + new Vector3(16, 12, 0), Quaternion.identity);
                 Instantiate(enemySpawner, transform.position + new Vector3(16, -2, 0), Quaternion.identity);
-                Instantiate(enemySpawner, transform.position + new Vector3(-16, 14, 0), Quaternion.identity);
+                Instantiate(enemySpawner, transform.position + new Vector3(-16, 12, 0), Quaternion.identity);
                 Instantiate(enemySpawner, transform.position + new Vector3(-16, -2, 0), Quaternion.identity);
             }
             else if (direction == 2)
             {
 
-                Instantiate(enemySpawner, transform.position + new Vector3(16, -14, 0), Quaternion.identity);
+                Instantiate(enemySpawner, transform.position + new Vector3(16, -12, 0), Quaternion.identity);
                 Instantiate(enemySpawner, transform.position + new Vector3(16, 2, 0), Quaternion.identity);
-                Instantiate(enemySpawner, transform.position + new Vector3(-16, -14, 0), Quaternion.identity);
+                Instantiate(enemySpawner, transform.position + new Vector3(-16, -12, 0), Quaternion.identity);
                 Instantiate(enemySpawner, transform.position + new Vector3(-16, 2, 0), Quaternion.identity);
             }
             else if (direction == 3)
